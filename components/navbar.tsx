@@ -126,7 +126,8 @@ export const Navbar = () => {
 						</a>
 
 						<a
-							download={Img1}
+							href="/images/both-2.jpg"
+							download="both.jpg"
 							className="border border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
 							<button>Get Invitation Card</button>
 						</a>
