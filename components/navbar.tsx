@@ -49,8 +49,8 @@ export const Navbar = () => {
 				</a>
 
 				<a
-					href="/images/both-2.jpg"
-					download="both.jpg"
+					href="/images/wedding-card.png"
+					download="Wedding-Invite.png"
 					className="border border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] hover:bg-opacity-80 text-white font-sans-body cursor-pointer">
 					Get Invitation Card
 				</a>
@@ -126,8 +126,8 @@ export const Navbar = () => {
 						</a>
 
 						<a
-							href="/images/both-2.jpg"
-							download="both.jpg"
+							href="/images/wedding-card.png"
+							download="Wedding-Invite.png"
 							className="border border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
 							<button>Get Invitation Card</button>
 						</a>
