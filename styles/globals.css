@@ -17,26 +17,26 @@ body {
 }
 
 .itinerary {
-	background-image: url("../public/images/chapel-old.png");
+	background-image: url("/images/chapel-old.png");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
 
 .site {
-	background-image: url("../public/images/woman-1.jpg");
+	background-image: url("/images/woman-1.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 40% 50%;
 }
 
 .rsvp {
-	background-image: url("../public/images/flower3.png");
+	background-image: url("/images/flower3.png");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
 
 .login {
-	background-image: url("../public/images/flower3.png");
+	background-image: url("/images/flower3.png");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
