@@ -66,7 +66,7 @@ export const Navbar = () => {
 							</div>
 						</div>
 						<div className="w-20 h-20 rounded-full border-2 border-[#2B1105] text-[#291e19] flex items-center justify-center text-2xl">
-							K&N
+							D&B
 						</div>
 						<div className="absolute animate-zoom bottom-0 -right-6 shadow-md shadow-black rounded-full flex items-center justify-center">
 							<div className="relative bg-green-400 rounded-full flex items-center justify-center">
