@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Navbar } from "../components/navbar";
 import { Spacer } from "../utils/spacer";
 import Img1 from "../public/images/both-2.jpg";
@@ -12,14 +12,71 @@ import { useRouter } from "next/router";
 import { AuthCtxt } from "./_app";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { collection, doc, getDocs, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Index = () => {
 	const router = useRouter();
 	const { isAuthenticated } = useContext(AuthCtxt);
+	const [registry, setRegistry] = useState([]);
+	const [checkedItem, setCheckedItem] = useState("");
+	const [userData, setUserData] = useState({
+		name: "",
+		phone: "",
+	});
+	const [added, setAdded] = useState("");
+	const [failed, setFailed] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		AOS.init();
 	}, []);
+
+	useEffect(() => {
+		async function fetchGuests() {
+			try {
+				//@ts-ignore
+				let list = [];
+				const querySnapshot = await getDocs(collection(db, "gifts-registry"));
+				querySnapshot.forEach(doc => {
+					list.push(doc.data());
+				});
+				//@ts-ignore
+
+				setRegistry(list);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+
+		fetchGuests();
+	}, []);
+
+	async function confirmPresence() {
+		setLoading(true);
+		try {
+			const res = await setDoc(doc(db, "dave-becky", userData.phone), {
+				Name: userData.name,
+				phone: userData.phone,
+				time: new Date().toLocaleString(),
+			});
+			setAdded(
+				"You have been successfully added to the guest list for the ceremony 🎉"
+			);
+			setTimeout(() => {
+				setAdded("");
+			}, 4000);
+			setLoading(false);
+
+			setUserData({ name: "", phone: "" });
+		} catch (e) {
+			setFailed("Oops!! Something went wrong please try again later 😕");
+			setTimeout(() => {
+				setFailed("");
+			}, 4000);
+			setLoading(false);
+		}
+	}
 
 	if (!isAuthenticated && typeof window !== "undefined") {
 		router.push("/auth");
@@ -40,8 +97,8 @@ const Index = () => {
 					Please join us to celebrate
 				</p>
 				<p className="text-[#2B1105] font-sans text-7xl text-center">
-					Dave <br className="sm:hidden" />& <br className="sm:hidden" />
-					Becky
+					Becky <br className="sm:hidden" />& <br className="sm:hidden" />
+					Dave
 				</p>
 				<p className="text-[#C6754D] font-sans text-2xl font-light">
 					December 23rd, 2022 - Buea
@@ -200,7 +257,7 @@ const Index = () => {
 
 				{/* GIFTS */}
 
-				<div id="gifts">
+				<div id="gifts & registry">
 					<Spacer className="h-36" />
 
 					<p className="text-5xl text-center font-sans">Gifts</p>
@@ -237,6 +294,54 @@ const Index = () => {
 						</div>
 
 						<Spacer className="h-16" />
+
+						<p className="font-sans text-center text-xl">
+							In case you to want get a gift for the couple, the following are
+							most recommended. Please select any of the following:
+						</p>
+						<Spacer className="h-8" />
+
+						<div className="flex flex-col">
+							{registry.map((item, idx) => {
+								const isChecked =
+									//@ts-ignore
+									checkedItem === item.name || item.status === "checked";
+
+								return (
+									<button
+										key={idx}
+										//@ts-ignore
+										onClick={() => setCheckedItem(item.name)}
+										className="flex space-x-3 items-center relative">
+										{isChecked ? (
+											<svg
+												id="referral"
+												xmlns="http://www.w3.org/2000/svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24">
+												<path d="M20 12.194v9.806h-20v-20h18.272l-1.951 2h-14.321v16h16v-5.768l2-2.038zm.904-10.027l-9.404 9.639-4.405-4.176-3.095 3.097 7.5 7.273 12.5-12.737-3.096-3.096z" />
+											</svg>
+										) : (
+											<span
+												className="w-5 h-5 mr-1 border-2 border-black"
+												id="referral"
+											/>
+										)}
+										<label
+											htmlFor="referral"
+											className="text-2xl font-sans-body">
+											{/* @ts-ignore */}
+											{item.name}
+										</label>
+										{/* @ts-ignore */}
+										{item.status === "checked" && (
+											<span className="h-[2px] bg-black w-28 absolute"></span>
+										)}
+									</button>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -245,7 +350,7 @@ const Index = () => {
 
 			{/* RSVP */}
 
-			<div id="rsvp" className="relative">
+			<div id="RSVP" className="relative">
 				<p className="text-5xl text-center font-sans">RSVP</p>
 
 				<div className="flex absolute left-0 right-0 top-0 mx-auto justify-center">
@@ -264,24 +369,49 @@ const Index = () => {
 
 					<Spacer className="h-8" />
 
-					<div className="sm:w-[60%] w-[80%] mx-auto">
-						<div className="flex sm:flex-row flex-col items-center sm:space-x-4 space-y-2 sm:space-y-0">
-							<Input label="First Name" />
-							<Input label="Last Name" />
-						</div>
+					<div className="sm:w-[30%] w-[80%] mx-auto">
+						<Input
+							largeLabel
+							value={userData.name}
+							label="Full Name"
+							onChange={e => setUserData({ ...userData, name: e.target.value })}
+						/>
+
+						<Spacer className="h-3" />
+
+						<Input
+							largeLabel
+							value={userData.phone}
+							label="Phone Number"
+							onChange={e =>
+								setUserData({ ...userData, phone: e.target.value })
+							}
+						/>
 
 						<Spacer className="h-4" />
 
-						<div className="flex sm:flex-row flex-col items-center sm:space-x-4 space-y-2 sm:space-y-0">
-							<Input label="Phone Number" />
-							<Input label="Number of Guests (How many people are you inviting, Max: 3)" />
-						</div>
+						{added && (
+							<div className="bg-green-500 px-3 py-2 rounded-lg">
+								<p className="text-lg font-sans-body text-center text-white">
+									{added}
+								</p>
+							</div>
+						)}
+						{failed && (
+							<div className="bg-red-400 px-3 py-2 rounded-lg">
+								<p className="text-lg font-sans-body text-center text-white">
+									{added}
+								</p>
+							</div>
+						)}
 
-						<Spacer className="h-8" />
+						<Spacer className="h-4" />
 
 						<div className="w-full flex items-center justify-center">
-							<button className="border rounded-lg px-8 py-2 bg-black bg-opacity-25 text-white cursor-pointer">
-								Submit
+							<button
+								onClick={confirmPresence}
+								className="border rounded-lg px-8 py-2 bg-black bg-opacity-25 text-white cursor-pointer">
+								{loading ? "Please wait ..." : "Submit"}
 							</button>
 						</div>
 					</div>
