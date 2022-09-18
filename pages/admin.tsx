@@ -32,26 +32,28 @@ const Admin = () => {
 
 	return (
 		<div className="w-full h-screen bg-gray-300 font-sans-body">
-			<div className="sm:w-[60%] w-[80%] bg-[white] mx-auto translate-y-10 border shadow-lg rounded-lg px-8 py-6">
+			<div className="sm:w-[60%] w-[90%] bg-[white] mx-auto translate-y-10 border shadow-lg rounded-lg px-8 py-6">
 				<p className="text-3xl font-sans-body font-medium">Dashboard</p>
 
 				<Spacer className="h-7" />
 
 				<div className="flex items-center space-x-6">
-					<p className="text-xl font-sans-body">TOTAL NUMBER OF GUESTS: </p>{" "}
+					<p className="sm:text-xl font-sans-body">TOTAL NUMBER OF GUESTS: </p>{" "}
 					<p className="text-xl font-sans-body">{data.length}</p>
 				</div>
 
 				<Spacer className="h-7" />
 
 				<div className="flex items-center justify-between w-full">
-					<p className="font-semibold text-lg w-[5%]">#</p>
+					<p className="font-semibold sm:text-lg w-[5%] mr-3 sm:mr-0">#</p>
 
-					<p className="font-semibold text-lg w-1/3">Name</p>
-					<p className="font-semibold text-lg w-1/3 text-center">
-						Phone Number
+					<p className="font-semibold sm:text-lg sm:w-1/3 w-1/2">Name</p>
+					<p className="font-semibold sm:text-lg sm:w-1/3 w-1/2 text-center">
+						Phone
 					</p>
-					<p className="font-semibold text-lg w-1/3 text-right">Date</p>
+					<p className="font-semibold text-lg sm:w-1/3 w-1/2 text-right sm:block hidden">
+						Date
+					</p>
 				</div>
 
 				<Spacer className="h-7" />
@@ -63,20 +65,26 @@ const Admin = () => {
 						return (
 							<div
 								key={idx}
-								className="flex w-full items-center justify-between">
-								<p className="font-medium text-lg w-[5%]">{idx + 1}</p>
-								<p className="font-medium text-lg w-1/3 text-left">
+								className="flex w-full items-start mb-3 justify-between">
+								<p className="font-medium sm:text-lg w-[5%] mr-3 sm:mr-0">
+									{idx + 1}
+								</p>
+								<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-left">
 									{/* @ts-ignore */}
 
 									{data.Name}
+									<span className="font-medium text-xs sm:w-1/3 w-1/2 block sm:hidden text-right">
+										{/* @ts-ignore */}
+										{data.time.split(",")[0]}
+									</span>
 								</p>
 
-								<p className="font-medium text-lg w-1/3 text-center">
+								<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-center">
 									{/* @ts-ignore */}
 									{data.phone}
 								</p>
 
-								<p className="font-medium text-lg w-1/3 text-right">
+								<p className="font-medium text-lg w-1/3 sm:block hidden text-right">
 									{/* @ts-ignore */}
 									{data.time.split(",")[0]}
 								</p>

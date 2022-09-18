@@ -98,7 +98,7 @@ const Index = () => {
 				</p>
 				<p className="text-[#2B1105] font-sans text-7xl text-center">
 					Becky <br className="sm:hidden" />& <br className="sm:hidden" />
-					Dave
+					David
 				</p>
 				<p className="text-[#C6754D] font-sans text-2xl font-light">
 					December 23rd, 2022 - Buea
@@ -301,7 +301,7 @@ const Index = () => {
 						</p>
 						<Spacer className="h-8" />
 
-						<div className="flex flex-col">
+						<div className="flex flex-col sm:w-1/2 text-black mx-auto">
 							{registry.map((item, idx) => {
 								const isChecked =
 									//@ts-ignore
@@ -312,31 +312,35 @@ const Index = () => {
 										key={idx}
 										//@ts-ignore
 										onClick={() => setCheckedItem(item.name)}
-										className="flex space-x-3 items-center relative">
-										{isChecked ? (
-											<svg
-												id="referral"
-												xmlns="http://www.w3.org/2000/svg"
-												width="24"
-												height="24"
-												viewBox="0 0 24 24">
-												<path d="M20 12.194v9.806h-20v-20h18.272l-1.951 2h-14.321v16h16v-5.768l2-2.038zm.904-10.027l-9.404 9.639-4.405-4.176-3.095 3.097 7.5 7.273 12.5-12.737-3.096-3.096z" />
-											</svg>
-										) : (
-											<span
-												className="w-5 h-5 mr-1 border-2 border-black"
-												id="referral"
-											/>
-										)}
-										<label
-											htmlFor="referral"
-											className="text-2xl font-sans-body">
-											{/* @ts-ignore */}
-											{item.name}
-										</label>
+										className="flex space-x-3 items-center justify-between relative border border-black rounded-lg px-3  mb-2">
+										<div className="flex items-center space-x-3">
+											{isChecked ? (
+												<svg
+													id="referral"
+													xmlns="http://www.w3.org/2000/svg"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24">
+													<path d="M20 12.194v9.806h-20v-20h18.272l-1.951 2h-14.321v16h16v-5.768l2-2.038zm.904-10.027l-9.404 9.639-4.405-4.176-3.095 3.097 7.5 7.273 12.5-12.737-3.096-3.096z" />
+												</svg>
+											) : (
+												<span
+													className="w-5 h-5 mr-1 border-2 border-black"
+													id="referral"
+												/>
+											)}
+											<label
+												htmlFor="referral"
+												className="text-2xl font-sans-body">
+												{/* @ts-ignore */}
+												{item.name}
+											</label>
+										</div>
 										{/* @ts-ignore */}
 										{item.status === "checked" && (
-											<span className="h-[2px] bg-black w-28 absolute"></span>
+											<span className="text-sm text-white border rounded-full px-3 bg-[#97917A] bg-opacity-50 font-sans-body">
+												Item Taken
+											</span>
 										)}
 									</button>
 								);
