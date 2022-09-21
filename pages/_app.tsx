@@ -20,8 +20,8 @@ const authenticateUser = () => {
 
 //@ts-ignore
 const UseAuthContext = ({ children }) => {
-	const isAuthenticated =
-		typeof window !== "undefined" && !!localStorage.getItem("user");
+	const isAuthenticated = true;
+	// typeof window !== "undefined" && !!localStorage.getItem("user");
 
 	return (
 		<AuthCtxt.Provider value={{ authenticateUser, isAuthenticated }}>
