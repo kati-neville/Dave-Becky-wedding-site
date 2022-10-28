@@ -14,7 +14,7 @@ export const NavItem: React.FC<{
 		<a
 			href={`#${link}`}
 			onClick={onClick}
-			className="font-sans text-[#2B1105] text-xl text-center capitalize">
+			className="font-sans text-[#fff] text-xl text-center capitalize">
 			{name}
 		</a>
 	);
@@ -32,23 +32,13 @@ export const Navbar = () => {
 				<NavItem link="itinerary" name="itinerary" />
 
 				<div className="relative flex items-end space-x-2">
-					<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center">
-						<div className="relative bg-green-400 rounded-full flex items-center justify-center">
-							<Image className="z-10" src={Img2} width={45} height={45} />
-							<span className="absolute text-5xl animate-ping">❤️</span>
-						</div>
-					</div>
+					<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center"></div>
 
-					<div className="w-28 h-28 rounded-full border-2 border-[#2B1105] text-[#291e19] flex items-center justify-center text-4xl">
+					<div className="w-28 h-28 rounded-full border-2 border-[#fff] text-[#fff] flex items-center justify-center text-4xl">
 						B&D
 					</div>
 
-					<div className="absolute -right-6 bottom-0 animate-zoom shadow-md shadow-black rounded-full flex items-center justify-center">
-						<div className="relative bg-green-400 rounded-full flex items-center justify-center">
-							<Image className="z-10" src={Img3} width={45} height={45} />
-							<span className="absolute text-5xl animate-ping">❤️</span>
-						</div>
-					</div>
+					<div className="absolute -right-6 bottom-0 animate-zoom shadow-md shadow-black rounded-full flex items-center justify-center"></div>
 				</div>
 				<NavItem link="gifts & registry" name={"gifts"} />
 				<NavItem link="RSVP" name={"RSVP"} />
@@ -57,28 +47,18 @@ export const Navbar = () => {
 					href="/images/wedding-card.png"
 					download="Wedding-Invite.png"
 					className="border border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] hover:bg-opacity-80 text-white font-sans-body cursor-pointer">
-					Get Invitation Card
+					Invitation Card
 				</a>
 			</div>
 
 			<div>
 				<div className="sm:hidden flex items-center justify-between w-[85%] py-4 mx-auto">
 					<div className="flex items-end relative">
-						<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center">
-							<div className="relative bg-green-400 rounded-full flex items-center justify-center">
-								<Image className="z-10" src={Img2} width={45} height={45} />
-								<span className="absolute text-5xl animate-ping">❤️</span>
-							</div>
-						</div>
-						<div className="w-20 h-20 rounded-full border-2 border-[#2B1105] text-[#291e19] flex items-center justify-center text-2xl">
+						<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center"></div>
+						<div className="w-20 h-20 rounded-full border-2 border-[#fff] text-[#fff] flex items-center justify-center text-2xl">
 							B&D
 						</div>
-						<div className="absolute animate-zoom bottom-0 -right-6 shadow-md shadow-black rounded-full flex items-center justify-center">
-							<div className="relative bg-green-400 rounded-full flex items-center justify-center">
-								<Image className="z-10" src={Img3} width={45} height={45} />
-								<span className="absolute text-5xl animate-ping">❤️</span>
-							</div>
-						</div>
+						<div className=" animate-zoom bottom-0 -right-6 shadow-md shadow-black rounded-full flex items-center justify-center"></div>
 					</div>
 
 					<button onClick={() => setOpen(!open)}>
@@ -96,7 +76,7 @@ export const Navbar = () => {
 					leave="transition-opacity ease-in duration-150"
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0">
-					<div className="sm:hidden flex flex-col items-center bg-[#97917A] bg-opacity-20 py-6 px-3 space-y-6">
+					<div className="sm:hidden flex flex-col items-center bg-[#0B090E] border border-gold border-t-0 py-6 px-3 space-y-6">
 						<NavItem link="home" name="home" onClick={() => setOpen(false)} />
 						<NavItem
 							link="story"

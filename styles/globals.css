@@ -9,6 +9,11 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: #fcf9f7;
+	background-image: url("../public/images/both-5.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #0b090e;
+	background-position: 100% 10%;
 	scroll-behavior: smooth;
 }
 

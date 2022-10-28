@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { Navbar } from "../components/navbar";
 import { Spacer } from "../utils/spacer";
-import Img1 from "../public/images/both-2.jpg";
+import Img1 from "../public/images/both.jpg";
 import Img2 from "../public/images/woman-3.png";
 import Img3 from "../public/images/man-2.png";
 import line from "../public/images/line.png";
@@ -14,6 +14,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { TypeAnimation } from "react-type-animation";
 
 const Index = () => {
 	const router = useRouter();
@@ -84,39 +85,58 @@ const Index = () => {
 
 	return (
 		<div className="mx-auto">
-			<div className="w-full fixed z-50 bg-[#fcf9f7] sm:py-3 py-0">
+			<div className="w-full fixed z-50 sm:py-3 py-0 bg-[#0B090E]">
 				<Navbar />
 			</div>
 
-			<div
-				id="home"
-				className="flex flex-col items-center justify-center space-y-3">
-				<Spacer className="h-48" />
+			<section className="flex flex-col relative items-center justify-center">
+				<div
+					id="home"
+					className="flex flex-col items-center justify-center  space-y-3 z-20">
+					<Spacer className="h-48" />
 
-				<p className="text-[#C6754D] font-sans text-2xl font-light">
-					Please join us to celebrate
-				</p>
-				<p className="text-[#2B1105] font-sans text-7xl text-center">
-					Becky <br className="sm:hidden" />& <br className="sm:hidden" />
-					David
-				</p>
-				<p className="text-[#C6754D] font-sans text-2xl font-light">
-					December 23rd, 2022 - Buea
-				</p>
-			</div>
+					<div className="sm:block hidden">
+						<TypeAnimation
+							sequence={["Please", 1000, "Please join us to celebrate"]}
+							wrapper="div"
+							cursor={false}
+							repeat={1}
+							style={{ fontSize: "4rem", color: "#fff" }}
+						/>
+					</div>
 
-			<Spacer className="h-12" />
+					<div className="sm:hidden block">
+						<TypeAnimation
+							sequence={["Please", 1000, "Please join us to celebrate"]}
+							wrapper="div"
+							cursor={false}
+							repeat={1}
+							style={{ fontSize: "1.5rem", color: "#fff" }}
+						/>
+					</div>
 
-			<section className="flex items-center justify-center">
-				<div data-aos="zoom-in" data-aos-duration="3000" className="w-[900px]">
-					<Image src={Img1} alt="" />
+					<p className="text-gold font-sans text-7xl sm:text-[8rem] text-center">
+						Becky <br className="sm:hidden" />& <br className="sm:hidden" />
+						David
+					</p>
+					<p className="text-white font-sans sm:text-5xl text-2xl font-light">
+						December 23rd, 2022 - Buea
+					</p>
+
+					<Spacer className={"h-12"} />
 				</div>
+
+				<Spacer className="h-12" />
+
+				{/* <div data-aos="zoom-in" data-aos-duration="3000" className="">
+					<Image src={Img1} alt="" />
+				</div> */}
 			</section>
 
 			<div id="story">
 				<Spacer className="h-36" />
 
-				<p className="text-7xl text-center">Our Story</p>
+				<p className="text-7xl text-center text-gold">Our Story</p>
 
 				<Spacer className="h-12" />
 
@@ -200,53 +220,50 @@ const Index = () => {
 				<div id="itinerary">
 					<Spacer className="h-36" />
 
-					<p className="text-5xl text-center font-sans">Itinerary</p>
+					<p className="text-5xl text-center font-sans text-gold">Itinerary</p>
 
 					<Spacer className="h-8" />
 
 					<div className="sm:w-[60%] w-[80%] mx-auto">
 						<div className=" space-y-2 mx-auto">
-							<p className="text-2xl text-center text-[#2B1105] text-opacity-80">
+							<p className="text-3xl text-center text-neutral-300 text-opacity-80">
 								Tuesday, 23rd December 2022
-							</p>
-							<p className="text-2xl text-center text-[#2B1105] text-opacity-80">
-								Holy Mountain Church of Worship - Mile 17, Buea
 							</p>
 						</div>
 
 						<Spacer className="h-8" />
 
-						<div className=" mx-auto">
-							<Spacer className="h-12" />
+						<div className="mx-auto">
+							<Spacer className="h-6" />
 
-							<div className="mx-auto">
-								<p className="w-full flex items-center justify-between">
-									<span className="text-xl text-[#2B1105] text-opacity-80">
-										10:00 am:
+							<div className="mx-auto sm:w-3/4">
+								<p className="w-full flex flex-col items-center justify-center">
+									<span className="text-3xl text-[#a59049]">
+										Church service
 									</span>
-									<span className="text-xl text-right">
-										Start of the church service
+
+									<span className="text-2xl text-[#fff] text-opacity-80">
+										12:00 pm - 2:00 pm
 									</span>
+									<p className="text-2xl text-center font-medium text-[#fff] text-opacity-80">
+										Holy Mountain of Worship Church - Mile 17, Buea
+									</p>
 								</p>
 
 								<Spacer className="h-8" />
 
-								<p className="w-full flex items-center justify-between">
-									<span className="text-xl text-[#2B1105] text-opacity-80">
-										12:00 am:{" "}
+								<p className="flex flex-col items-center justify-center">
+									<span className="text-3xl text-right text-[#a59049]">
+										Reception
 									</span>
-									<span className="text-xl text-right">
-										End of the church service
+									<span className="text-2xl text-[#fff] text-opacity-80">
+										16:00 pm
 									</span>
-								</p>
 
-								<Spacer className="h-8" />
-
-								<p className="w-full flex items-center justify-between">
-									<span className="text-xl text-[#2B1105] text-opacity-80">
-										16:00 pm:{" "}
+									<span className="text-2xl text-center text-[#fff] text-opacity-80">
+										Former CEFAM, currently NASLA (National Advanced School of
+										Local Administration)
 									</span>
-									<span className="text-xl text-right">Reception</span>
 								</p>
 							</div>
 
@@ -260,33 +277,29 @@ const Index = () => {
 				<div id="gifts & registry">
 					<Spacer className="h-36" />
 
-					<p className="text-5xl text-center font-sans">Gifts</p>
+					<p className="text-5xl text-center font-sans text-gold">Gifts</p>
 
 					<Spacer className="h-8" />
 
 					<div className="sm:w-[60%] w-[85%] mx-auto text-[#2B1105] text-opacity-80">
 						<div className="mx-auto">
-							<p className="font-sans text-center text-xl">
+							<p className="font-sans text-center text-xl text-neutral-200">
 								For all cash gifts please use the details below:
 							</p>
 
 							<Spacer className="h-8" />
 
-							<p className="w-full flex flex-wrap items-center justify-between">
-								<span className="text-xl text-[#2B1105] text-opacity-80">
-									MTN Momo 1
-								</span>
+							<p className="w-full flex flex-wrap items-center justify-between text-neutral-200">
+								<span className="text-xl text-opacity-80">MTN Momo 1</span>
 								<span className="text-xl font-bold">
-									674743099 (Name: Dave Claig)
+									674743099 (Name: David Claig)
 								</span>
 							</p>
 
 							<Spacer className="h-8" />
 
-							<p className="w-full flex flex-wrap items-center justify-between">
-								<span className="text-xl text-[#2B1105] text-opacity-80">
-									MTN Momo 2
-								</span>
+							<p className="w-full flex flex-wrap items-center justify-between text-neutral-200">
+								<span className="text-xl text-opacity-80 ">MTN Momo 2</span>
 								<span className="text-xl font-bold">
 									671890867 (Name: Becky Namondo)
 								</span>
@@ -295,53 +308,56 @@ const Index = () => {
 
 						<Spacer className="h-16" />
 
-						<p className="font-sans text-center text-xl">
-							In case you to want get a gift for the couple, the following are
-							most recommended. Please select any of the following:
+						<p className="font-sans text-center text-xl text-neutral-200">
+							Please know that your presence at our wedding is present enough!
+							However, for friends and family who have been asking for gift
+							ideas, below are some items we’d find the most useful as we
+							prepare for married life.
 						</p>
 						<Spacer className="h-8" />
 
-						<div className="flex flex-col sm:w-1/2 text-black mx-auto">
+						<div className="flex flex-col  lg:w-3/4 w-full text-black mx-auto">
 							{registry.map((item, idx) => {
-								const isChecked =
-									//@ts-ignore
-									checkedItem === item.name || item.status === "checked";
+								// const isChecked =
+								// 	//@ts-ignore
+								// 	checkedItem === item.name || item.status === "checked";
 
 								return (
 									<button
 										key={idx}
 										//@ts-ignore
 										onClick={() => setCheckedItem(item.name)}
-										className="flex space-x-3 items-center justify-between relative border border-black rounded-lg px-3  mb-2">
+										className="flex space-x-3 items-center justify-between relative border border-white rounded-lg px-3  mb-2">
 										<div className="flex items-center space-x-3">
-											{isChecked ? (
+											{/* {isChecked ? (
 												<svg
 													id="referral"
 													xmlns="http://www.w3.org/2000/svg"
 													width="24"
 													height="24"
+													fill="white"
 													viewBox="0 0 24 24">
 													<path d="M20 12.194v9.806h-20v-20h18.272l-1.951 2h-14.321v16h16v-5.768l2-2.038zm.904-10.027l-9.404 9.639-4.405-4.176-3.095 3.097 7.5 7.273 12.5-12.737-3.096-3.096z" />
 												</svg>
 											) : (
 												<span
-													className="w-5 h-5 mr-1 border-2 border-black"
+													className="w-5 h-5 mr-1 border-2 border-neutral-200"
 													id="referral"
 												/>
-											)}
+											)} */}
 											<label
 												htmlFor="referral"
-												className="text-2xl font-sans-body">
+												className="sm:text-2xl font-sans-body text-neutral-200">
 												{/* @ts-ignore */}
 												{item.name}
 											</label>
 										</div>
 										{/* @ts-ignore */}
-										{item.status === "checked" && (
+										{/* {item.status === "checked" && (
 											<span className="text-sm text-white border rounded-full px-3 bg-[#97917A] bg-opacity-50 font-sans-body">
-												Item Taken
+												Taken
 											</span>
-										)}
+										)} */}
 									</button>
 								);
 							})}
@@ -426,7 +442,9 @@ const Index = () => {
 
 			<Spacer className="h-4" />
 
-			<p className="font-sans text-center ">Done with ❤️ by Neville</p>
+			<p className="font-sans text-center text-white">
+				Done with ❤️ by Neville
+			</p>
 
 			<Spacer className="h-6" />
 		</div>

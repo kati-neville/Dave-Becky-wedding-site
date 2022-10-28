@@ -10,6 +10,9 @@ module.exports = {
 		},
 
 		extend: {
+			colors: {
+				gold: "#D4AF37",
+			},
 			keyframes: {
 				zoom: {
 					"0%": { transform: "scale(1)" },
