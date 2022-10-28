@@ -13,10 +13,6 @@ const Login = () => {
 	const [error, setError] = useState("");
 	const password = "DAVE123";
 
-	if (isAuthenticated) {
-		router.push("/");
-	}
-
 	return (
 		<>
 			<div className="absolute top-1/2 -translate-y-1/2  left-0 right-0 mx-auto sm:w-[40%] w-[90%] text-[#2B1105] text-opacity-70 login">
