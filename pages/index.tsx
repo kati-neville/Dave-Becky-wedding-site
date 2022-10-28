@@ -309,10 +309,11 @@ const Index = () => {
 						<Spacer className="h-16" />
 
 						<p className="font-sans text-center text-xl text-neutral-200">
-							Please know that your presence at our wedding is present enough!
-							However, for friends and family who have been asking for gift
-							ideas, below are some items we’d find the most useful as we
-							prepare for married life.
+							Your presence at our wedding is present enough! However, for
+							friends and family who have been asking for gift ideas, below are
+							some items we’d find the most useful as we prepare for married
+							life. In No way should you feel pressured to get these listed
+							ones, every present will be highly appreciated.
 						</p>
 						<Spacer className="h-8" />
 
