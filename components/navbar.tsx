@@ -32,13 +32,23 @@ export const Navbar = () => {
 				<NavItem link="itinerary" name="itinerary" />
 
 				<div className="relative flex items-end space-x-2">
-					<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center"></div>
+					<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center">
+						<div className="relative bg-green-400 rounded-full flex items-center justify-center">
+							<Image className="z-10" src={Img2} width={45} height={45} />
+							<span className="absolute text-5xl animate-ping">❤️</span>
+						</div>
+					</div>
 
 					<div className="w-28 h-28 rounded-full border-2 border-[#fff] text-[#fff] flex items-center justify-center text-4xl">
 						B&D
 					</div>
 
-					<div className="absolute -right-6 bottom-0 animate-zoom shadow-md shadow-black rounded-full flex items-center justify-center"></div>
+					<div className="absolute -right-6 bottom-0 animate-zoom shadow-md shadow-black rounded-full flex items-center justify-center">
+						<div className="relative bg-green-400 rounded-full flex items-center justify-center">
+							<Image className="z-10" src={Img3} width={45} height={45} />
+							<span className="absolute text-5xl animate-ping">❤️</span>
+						</div>
+					</div>
 				</div>
 				<NavItem link="gifts & registry" name={"gifts"} />
 				<NavItem link="RSVP" name={"RSVP"} />
@@ -54,11 +64,21 @@ export const Navbar = () => {
 			<div>
 				<div className="sm:hidden flex items-center justify-between w-[85%] py-4 mx-auto">
 					<div className="flex items-end relative">
-						<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center"></div>
+						<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center">
+							<div className="relative bg-green-400 rounded-full flex items-center justify-center">
+								<Image className="z-10" src={Img2} width={45} height={45} />
+								<span className="absolute text-5xl animate-ping">❤️</span>
+							</div>
+						</div>
 						<div className="w-20 h-20 rounded-full border-2 border-[#fff] text-[#fff] flex items-center justify-center text-2xl">
 							B&D
 						</div>
-						<div className=" animate-zoom bottom-0 -right-6 shadow-md shadow-black rounded-full flex items-center justify-center"></div>
+						<div className="absolute animate-zoom bottom-0 -right-6 shadow-md shadow-black rounded-full flex items-center justify-center">
+							<div className="relative bg-green-400 rounded-full flex items-center justify-center">
+								<Image className="z-10" src={Img3} width={45} height={45} />
+								<span className="absolute text-5xl animate-ping">❤️</span>
+							</div>
+						</div>
 					</div>
 
 					<button onClick={() => setOpen(!open)}>

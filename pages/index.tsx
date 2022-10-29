@@ -227,7 +227,7 @@ const Index = () => {
 					<div className="sm:w-[60%] w-[80%] mx-auto">
 						<div className=" space-y-2 mx-auto">
 							<p className="text-3xl text-center text-neutral-300 text-opacity-80">
-								Tuesday, 23rd December 2022
+								Friday, 23rd December 2022
 							</p>
 						</div>
 
