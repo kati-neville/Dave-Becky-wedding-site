@@ -1,9 +1,10 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useContext } from "react";
 import Image from "next/image";
-import Img2 from "../public/images/woman-4.png";
+import Img2 from "../public/images/woman-3.png";
 import Img3 from "../public/images/man-2.png";
 import menu from "../public/images/menuIc.png";
 import { Transition } from "@headlessui/react";
+import { AuthCtxt } from "../pages/_app";
 
 export const NavItem: React.FC<{
 	link: string;
@@ -22,14 +23,14 @@ export const NavItem: React.FC<{
 
 export const Navbar = () => {
 	const [open, setOpen] = useState(false);
+	const { setShowPreview } = useContext(AuthCtxt);
 
 	return (
 		<>
 			<div className="sm:flex hidden items-center justify-between w-[60%] mx-auto">
-				<NavItem link="home" name="home" />
-
 				<NavItem link="story" name="story" />
 				<NavItem link="itinerary" name="itinerary" />
+				<NavItem link="gifts & registry" name={"gifts"} />
 
 				<div className="relative flex items-end space-x-2">
 					<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center">
@@ -50,7 +51,11 @@ export const Navbar = () => {
 						</div>
 					</div>
 				</div>
-				<NavItem link="gifts & registry" name={"gifts"} />
+				<button
+					onClick={() => setShowPreview(true)}
+					className="font-sans text-[#fff] text-xl text-center capitalize">
+					photos
+				</button>
 				<NavItem link="RSVP" name={"RSVP"} />
 
 				<a
@@ -108,6 +113,14 @@ export const Navbar = () => {
 							name={"itinerary"}
 							onClick={() => setOpen(false)}
 						/>
+						<button
+							onClick={() => {
+								setShowPreview(true);
+								setOpen(false);
+							}}
+							className="font-sans text-[#fff] text-xl text-center capitalize">
+							photos
+						</button>
 						<NavItem
 							link="gifts"
 							name={"gifts & registry"}

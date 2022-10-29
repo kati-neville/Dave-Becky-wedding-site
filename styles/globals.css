@@ -21,12 +21,6 @@ body {
 	box-sizing: border-box;
 }
 
-.itinerary {
-	background-image: url("/images/chapel-old.png");
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-}
-
 .site {
 	background-image: url("/images/woman-1.jpg");
 	background-repeat: no-repeat;
