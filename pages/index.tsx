@@ -139,7 +139,7 @@ const Index = () => {
 						className="text-5xl font-sans mt-10 pr-10 flex justify-end w-full">
 						<Image src={close} alt="" width={40} height={40} />
 					</button>
-					<div className="grid grid-cols-1 lg:gap-4 sm:w-2/3 w-4/5 relative sm:translate-y-[5%] translate-y-[15%] mx-auto">
+					<div className="grid grid-cols-1 lg:gap-4 sm:w-2/3 w-4/5 relative sm:translate-y-[2%] translate-y-[15%] mx-auto">
 						<>
 							<Slider className="" {...settings2}>
 								{Gallery?.map((image, idx) => {
@@ -151,11 +151,12 @@ const Index = () => {
 													alt=""
 													height={700}
 													width={500}
+													placeholder="blur"
 													objectFit="contain"
 												/>
 											</div>
 											<div className="block sm:hidden mx-auto">
-												<Image src={image} alt="" />
+												<Image src={image} alt="" placeholder="blur" />
 											</div>
 										</div>
 									);
