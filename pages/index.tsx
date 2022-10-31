@@ -278,17 +278,12 @@ const Index = () => {
 									/>
 								</div>
 
-								<p className="text-justify font-sans text-lg text-white">
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s, when an unknown
-									printer took a galley of type and scrambled it to make a type
-									specimen book. It has survived not only five centuries, but
-									also the leap into electronic typesetting, remaining
-									essentially unchanged. It was popularised in the 1960s with
-									the release of Letraset sheets containing Lorem Ipsum
-									passages, and more recently with desktop publishing software
-									like Aldus PageMaker including versions of Lorem Ipsum.
+								<p className="text-justify font-sans text-2xl text-white">
+									You gave me a reason to love again 🥺, you complete me, your
+									kind heart melts my heart like wax 🕯️, I will choose you again
+									and again, Cuz in you I found an outstanding woman, a calm and
+									a gentle soul, a Jesus lover. You are a gift from God to me I
+									love you and I will always love you my angel. ❤️
 								</p>
 
 								<Spacer className="h-14" />
@@ -342,7 +337,7 @@ const Index = () => {
 											Reception
 										</span>
 										<span className="text-2xl text-[#fff] text-opacity-80">
-											16:00 pm
+											04:00 pm
 										</span>
 
 										<span className="text-2xl text-center text-[#fff] text-opacity-80">
