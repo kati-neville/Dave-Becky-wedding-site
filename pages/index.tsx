@@ -25,6 +25,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import close from "../public/images/close.png";
 import { Gallery } from "../utils/gallery";
+import { SvgOpenPassword } from "../components/open";
+import SvgPassword from "../components/close";
 
 export function CarouselArrow({
 	onClick,
@@ -494,11 +496,9 @@ const Index = () => {
 								setIsLoading(loading => !loading);
 							}
 						}}
-						className="border w-full border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
-						Church Location{" "}
-						<span className="text-sm">
-							({viewMap === "church" ? "open" : "closed"})
-						</span>
+						className="border w-full flex items-center space-x-4 justify-center border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
+						<span>Church Location </span>
+						{viewMap === "church" ? <SvgOpenPassword /> : <SvgPassword />}
 					</button>
 					<button
 						onClick={() => {
@@ -510,11 +510,9 @@ const Index = () => {
 								setIsLoading(loading => !loading);
 							}
 						}}
-						className="border w-full border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
-						Reception Location{" "}
-						<span className="text-sm">
-							({viewMap === "reception" ? "open" : "closed"})
-						</span>
+						className="border w-full flex items-center space-x-4 justify-center border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
+						<span> Reception Location </span>
+						{viewMap === "reception" ? <SvgOpenPassword /> : <SvgPassword />}
 					</button>
 				</div>
 
