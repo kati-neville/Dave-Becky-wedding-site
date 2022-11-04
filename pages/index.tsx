@@ -298,7 +298,8 @@ const Index = () => {
 									before, I realized you had prepared snacks for all the kids,
 									making them happy. I will choose you again and again, because
 									in you I found an outstanding woman, a calm and gentle soul,
-									and a Jesus lover. You are a gift from God to me. ❤️
+									and a Jesus lover. You are a gift from God to me. I love you
+									and I will always love you my angel. ❤️
 								</p>
 
 								<Spacer className="h-14" />
@@ -368,7 +369,7 @@ const Index = () => {
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>Emerald Green</span>{" "}
-											<span className="bg-[#50C878] w-8 h-8 inline-block rounded-full"></span>
+											<span className="bg-[#105E26] w-8 h-8 inline-block rounded-full"></span>
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>/ burnt orange</span>
