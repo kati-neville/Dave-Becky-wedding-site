@@ -225,7 +225,7 @@ const Index = () => {
 
 					<div className=" bg-[#97917A] bg-opacity-60 flex justify-center">
 						{" "}
-						<div className="sm:flex items-center sm:space-x-8 justify-center sm:w-[70%] w-[80%]">
+						<div className="sm:flex items-start sm:space-x-8 justify-center sm:w-[70%] w-[80%]">
 							<div className="sm:w-1/2">
 								<Spacer className="h-14" />
 
@@ -243,16 +243,18 @@ const Index = () => {
 									/>
 								</div>
 								<p className="text-justify font-sans text-lg text-white">
-									Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry. Lorem Ipsum has been the industry's
-									standard dummy text ever since the 1500s, when an unknown
-									printer took a galley of type and scrambled it to make a type
-									specimen book. It has survived not only five centuries, but
-									also the leap into electronic typesetting, remaining
-									essentially unchanged. It was popularised in the 1960s with
-									the release of Letraset sheets containing Lorem Ipsum
-									passages, and more recently with desktop publishing software
-									like Aldus PageMaker including versions of Lorem Ipsum.
+									Six years ago, I never realized that the guy i spotted playing
+									the bass guitar 🎸 in church will end up being my man.😅 When
+									I said ‘yes’ to you, the only thing on my mind was that I
+									wanted to be happy all my life, and for me, happiness is being
+									with you. Life has become more beautiful since I met you. You
+									have seen me through the best and worse phases of life and
+									have always been my pillar of strength and reason to smile.
+									Thank you for your constant love and friendship and thank you
+									for trusting me to partner with you on this journey. I know
+									now for sure that I would walk down the aisle to no one but
+									you. Let's drive our way through a wonderful life together. I
+									love you my darling ❤️
 								</p>
 
 								<Spacer className="h-14" />
@@ -278,7 +280,7 @@ const Index = () => {
 									/>
 								</div>
 
-								<p className="text-justify font-sans text-2xl text-white">
+								<p className="text-justify font-sans text-xl text-white">
 									You gave me a reason to love again 🥺, you complete me, your
 									kind heart melts my heart like wax 🕯️, I will choose you again
 									and again, Cuz in you I found an outstanding woman, a calm and
