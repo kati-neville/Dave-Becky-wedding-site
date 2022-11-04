@@ -375,7 +375,7 @@ const Index = () => {
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>/ burnt orange</span>
-											<span className="bg-[#CC5500] w-8 h-8 inline-block rounded-full"></span>
+											<span className="bg-[#b03608] w-8 h-8 inline-block rounded-full"></span>
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>/ silver</span>
