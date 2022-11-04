@@ -371,15 +371,15 @@ const Index = () => {
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>Emerald Green</span>{" "}
-											<span className="bg-[#105E26] w-8 h-8 inline-block rounded-full"></span>
+											<span className="bg-[#033839] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>/ burnt orange</span>
-											<span className="bg-[#b03608] w-8 h-8 inline-block rounded-full"></span>
+											<span className="bg-[#953817] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
 											<span>/ silver</span>
-											<span className="bg-[#C0C0C0] w-8 h-8 inline-block rounded-full"></span>
+											<span className="bg-[#C0C0C0] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
 										</span>
 									</div>
 								</div>
