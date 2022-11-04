@@ -34,7 +34,7 @@ export const Navbar = () => {
 
 				<div className="relative flex items-end space-x-2">
 					<div className="absolute animate-zoom top-0 -left-6 shadow-md shadow-black rounded-full flex items-center justify-center">
-						<div className="relative bg-green-400 rounded-full flex items-center justify-center">
+						<div className="relative rounded-full flex items-center justify-center">
 							<Image className="z-10" src={Img2} width={45} height={45} />
 							<span className="absolute text-5xl animate-ping">❤️</span>
 						</div>
@@ -79,7 +79,7 @@ export const Navbar = () => {
 							B&D
 						</div>
 						<div className="absolute animate-zoom bottom-0 -right-6 shadow-md shadow-black rounded-full flex items-center justify-center">
-							<div className="relative bg-green-400 rounded-full flex items-center justify-center">
+							<div className="relative rounded-full flex items-center justify-center">
 								<Image className="z-10" src={Img3} width={45} height={45} />
 								<span className="absolute text-5xl animate-ping">❤️</span>
 							</div>
