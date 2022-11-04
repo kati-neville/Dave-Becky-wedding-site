@@ -253,18 +253,18 @@ const Index = () => {
 									/>
 								</div>
 								<p className="text-justify font-sans text-lg text-white">
-									Six years ago, I never realized that the guy i spotted playing
-									the bass guitar 🎸 in church will end up being my man.😅 When
-									I said ‘yes’ to you, the only thing on my mind was that I
-									wanted to be happy all my life, and for me, happiness is being
-									with you. Life has become more beautiful since I met you. You
-									have seen me through the best and worse phases of life and
-									have always been my pillar of strength and reason to smile.
-									Thank you for your constant love and friendship and thank you
-									for trusting me to partner with you on this journey. I know
-									now for sure that I would walk down the aisle to no one but
-									you. Let's drive our way through a wonderful life together. I
-									love you my darling ❤️
+									Six years ago, I never realized that the guy I spotted playing
+									the bass guitar in church would end up being my man.😅 When I
+									said "yes" to you, the only thing on my mind was that I wanted
+									to be happy all my life, and for me, happiness is being with
+									you. Life has become more beautiful since I met you. You have
+									seen me through the best and worst phases of life and have
+									always been my pillar of strength and reason to smile. Thank❤️
+									you for your constant love and friendship, and thank you for
+									trusting me to partner with you on this journey. I know now
+									for sure that I would walk down the aisle for no one but you.
+									Let's drive our way through a wonderful life together. I love
+									you, my darling. ❤️
 								</p>
 
 								<Spacer className="h-14" />
@@ -291,14 +291,14 @@ const Index = () => {
 								</div>
 
 								<p className="text-justify font-sans text-lg text-white">
-									You gave me a reason to love again. You complete me and your
+									You gave me a reason to love again. You complete me, and your
 									kind heart melts my heart. The memories are in thousands of
-									different lovely colors all painted by your kind heart. I
-									remember when I was on outreach with kids at the
-									orphanage–before, I realized, you had prepared snacks for all
-									the kids, making them happy. I will choose you again and again
-									cuz in you, I found an outstanding woman, a calm and gentle
-									soul, a Jesus lover. You are a gift from God to me ❤️
+									different, lovely colors, all painted by your kind heart. I
+									remember when I was on outreach with kids at the orphanage
+									before, I realized you had prepared snacks for all the kids,
+									making them happy. I will choose you again and again, because
+									in you I found an outstanding woman, a calm and gentle soul,
+									and a Jesus lover. You are a gift from God to me. ❤️
 								</p>
 
 								<Spacer className="h-14" />
