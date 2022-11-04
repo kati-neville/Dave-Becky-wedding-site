@@ -49,6 +49,8 @@ const Index = () => {
 	const router = useRouter();
 	const { isAuthenticated, setShowPreview, showPreview } = useContext(AuthCtxt);
 	const [registry, setRegistry] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const [viewMap, setViewMap] = useState<"church" | "reception">();
 	const [checkedItem, setCheckedItem] = useState("");
 	const [userData, setUserData] = useState({
 		name: "",
@@ -125,6 +127,14 @@ const Index = () => {
 	}
 
 	getLocation();
+
+	useEffect(() => {
+		if (isLoading) {
+			setTimeout(() => {
+				setIsLoading(false);
+			}, 2000);
+		}
+	}, [isLoading]);
 
 	if (!isAuthenticated && typeof window !== "undefined") {
 		router.push("/auth");
@@ -280,12 +290,15 @@ const Index = () => {
 									/>
 								</div>
 
-								<p className="text-justify font-sans text-xl text-white">
-									You gave me a reason to love again 🥺, you complete me, your
-									kind heart melts my heart like wax 🕯️, I will choose you again
-									and again, Cuz in you I found an outstanding woman, a calm and
-									a gentle soul, a Jesus lover. You are a gift from God to me I
-									love you and I will always love you my angel. ❤️
+								<p className="text-justify font-sans text-lg text-white">
+									You gave me a reason to love again. You complete me and your
+									kind heart melts my heart. The memories are in thousands of
+									different lovely colors all painted by your kind heart. I
+									remember when I was on outreach with kids at the
+									orphanage–before, I realized, you had prepared snacks for all
+									the kids, making them happy. I will choose you again and again
+									cuz in you, I found an outstanding woman, a calm and gentle
+									soul, a Jesus lover. You are a gift from God to me ❤️
 								</p>
 
 								<Spacer className="h-14" />
@@ -331,9 +344,7 @@ const Index = () => {
 											Holy Mountain of Worship Church - Mile 17, Buea
 										</span>
 									</p>
-
 									<Spacer className="h-8" />
-
 									<p className="flex flex-col space-y-4 items-center justify-center">
 										<span className="text-3xl text-right text-[#a59049]">
 											Reception
@@ -347,6 +358,27 @@ const Index = () => {
 											Local Administration)
 										</span>
 									</p>
+
+									<Spacer className="h-5" />
+
+									<div className="text-gold w-full text-2xl flex sm:flex-row flex-col items-center text-center">
+										{" "}
+										<span className="sm:text-gold text-[#a59049] sm:mb-0 mb-2">
+											COLORS:{" "}
+										</span>
+										<span className="inline-flex items-center space-x-2 m-1">
+											<span>Emerald Green</span>{" "}
+											<span className="bg-[#50C878] w-8 h-8 inline-block rounded-full"></span>
+										</span>
+										<span className="inline-flex items-center space-x-2 m-1">
+											<span>/ burnt orange</span>
+											<span className="bg-[#CC5500] w-8 h-8 inline-block rounded-full"></span>
+										</span>
+										<span className="inline-flex items-center space-x-2 m-1">
+											<span>/ silver</span>
+											<span className="bg-[#C0C0C0] w-8 h-8 inline-block rounded-full"></span>
+										</span>
+									</div>
 								</div>
 
 								<Spacer className="h-8" />
@@ -450,6 +482,79 @@ const Index = () => {
 				</div>
 
 				<Spacer className="h-8" />
+
+				<div className="sm:w-[45%] w-3/4 mx-auto flex sm:flex-row flex-col items-center sm:space-x-3 sm:space-y-0 space-y-3 my-4 text-white justify-center">
+					<button
+						onClick={() => {
+							if (viewMap === "church") {
+								setViewMap(undefined);
+							} else {
+								setViewMap("church");
+								setIsLoading(loading => !loading);
+							}
+						}}
+						className="border w-full border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
+						Church Location{" "}
+						<span className="text-sm">
+							({viewMap === "church" ? "open" : "closed"})
+						</span>
+					</button>
+					<button
+						onClick={() => {
+							if (viewMap === "reception") {
+								setViewMap(undefined);
+								return;
+							} else {
+								setViewMap("reception");
+								setIsLoading(loading => !loading);
+							}
+						}}
+						className="border w-full border-neutral-300 px-3 py-2 rounded-md bg-[#97917A] text-white font-sans-body">
+						Reception Location{" "}
+						<span className="text-sm">
+							({viewMap === "reception" ? "open" : "closed"})
+						</span>
+					</button>
+				</div>
+
+				<div className="relative w-full">
+					{isLoading ? (
+						<div className="absolute top-1/3 left-1/2">
+							<div className="h-14 w-14 rounded-full border-4 border-t-[#97917A]  border-r-[#97917A]  border-primary-200 animate-spin mr-3"></div>
+						</div>
+					) : null}
+
+					{viewMap === "reception" ? (
+						<div className="mapouter sm:h-[32.3rem] z-30 mx-auto sm:w-[42.2rem] relative text-right">
+							<div className="gmap_canvas  overflow-hidden bg-none">
+								<iframe
+									className="h-[32.3rem] sm:w-[42.2rem]  w-[22rem] mx-auto"
+									id="gmap_canvas"
+									src="https://maps.google.com/maps?q=National%20Advanced%20School%20of%20Local%20Administration%20buea&t=&z=17&ie=UTF8&iwloc=&output=embed"
+									frameBorder="0"
+									scrolling="no"
+									marginHeight={0}
+									marginWidth={0}></iframe>
+							</div>
+						</div>
+					) : null}
+					{viewMap === "church" ? (
+						<div className="mapouter sm:h-[32.3rem] w-[22rem] z-30 mx-auto sm:w-[42.2rem] relative text-right">
+							<div className="gmap_canvas sm:h-[32.3rem] sm:w-[42.2rem] overflow-hidden bg-none">
+								<iframe
+									className="h-[32.3rem] sm:w-[42.2rem]  w-[22rem] mx-auto"
+									id="gmap_canvas"
+									src="https://maps.google.com/maps?q=holy%20mountain%20of%20worship%20church%20buea&t=&z=17&ie=UTF8&iwloc=&output=embed"
+									frameBorder="0"
+									scrolling="no"
+									marginHeight={0}
+									marginWidth={0}></iframe>
+							</div>
+						</div>
+					) : null}
+				</div>
+
+				{/* !important */}
 
 				{/* RSVP */}
 
