@@ -374,12 +374,12 @@ const Index = () => {
 											<span className="bg-[#033839] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
-											<span>/ burnt orange</span>
+											<span>/ Burnt Orange</span>
 											<span className="bg-[#953817] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
 										</span>
 										<span className="inline-flex items-center space-x-2 m-1">
-											<span>/ silver</span>
-											<span className="bg-[#C0C0C0] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
+											<span>/ Champagne Gold</span>
+											<span className="bg-[#FAE3B4] w-8 h-8 inline-block rounded-full border-2 border-white"></span>
 										</span>
 									</div>
 								</div>
