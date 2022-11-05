@@ -296,12 +296,12 @@ const Index = () => {
 									You gave me a reason to love again. You complete me, and your
 									kind heart melts my heart. The memories are in thousands of
 									different, lovely colors, all painted by your kind heart. I
-									remember when I was on outreach with kids at the orphanage
-									before, I realized you had prepared snacks for all the kids,
+									remember when I was on outreach with kids at the orphanage,
+									before I realized you had prepared snacks for all the kids,
 									making them happy. I will choose you again and again, because
 									in you I found an outstanding woman, a calm and gentle soul,
-									and a Jesus lover. You are a gift from God to me. I love you
-									and I will always love you my angel. ❤️
+									and a Jesus lover. You are a gift from God to me. I love you,
+									and I will always love you, my angel. ❤️
 								</p>
 
 								<Spacer className="h-14" />
