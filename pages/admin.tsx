@@ -3,21 +3,6 @@ import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Spacer } from "../utils/spacer";
 
-export const Status: React.FC<{ status: "Pending" | "Accepted" }> = ({
-	status = "Pending",
-}) => {
-	return (
-		<div
-			className={
-				status === "Pending"
-					? "border-2 rounded-full bg-yellow-500 text-white"
-					: "border-2 rounded-full bg-green-500 text-white"
-			}>
-			{status}
-		</div>
-	);
-};
-
 const Admin = () => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
@@ -62,16 +47,13 @@ const Admin = () => {
 				<div className="flex items-center justify-between w-full">
 					<p className="font-semibold sm:text-lg w-[5%] mr-3 sm:mr-0">#</p>
 
-					<p className="font-semibold sm:text-lg sm:w-1/4 w-1/2">Name</p>
-					<p className="font-semibold sm:text-lg sm:w-1/4 w-1/2 text-center sm:block hidden">
+					<p className="font-semibold sm:text-lg sm:w-1/3 w-1/2">Name</p>
+					<p className="font-semibold sm:text-lg sm:w-1/3 w-1/2 text-center">
 						Phone
 					</p>
 
-					<p className="font-semibold text-lg sm:w-1/4 w-1/2 text-center sm:block hidden">
+					<p className="font-semibold text-lg sm:w-1/3 w-1/2 text-center sm:block hidden">
 						Date
-					</p>
-					<p className="font-semibold sm:text-lg sm:w-1/4 w-1/2 text-center">
-						Status
 					</p>
 				</div>
 
@@ -88,30 +70,25 @@ const Admin = () => {
 								<p className="font-medium sm:text-lg w-[5%] mr-3 sm:mr-0">
 									{idx + 1}
 								</p>
-								<p className="font-medium sm:text-lg sm:w-1/4 w-1/2 text-left">
+								<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-left">
 									{/* @ts-ignore */}
 
 									{data.Name}
-									<span className="font-medium text-xs sm:w-1/4 w-1/2 block sm:hidden">
+									<span className="font-medium text-xs sm:w-1/3 w-1/2 block sm:hidden">
 										{/* @ts-ignore */}
 										{data.time.split(",")[0]}
 									</span>
 								</p>
 
-								<p className="font-medium sm:text-lg sm:w-1/4 w-1/2 text-center sm:block hidden">
+								<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-center">
 									{/* @ts-ignore */}
 									{data.phone}
 								</p>
 
-								<p className="font-medium text-lg w-1/4 sm:block hidden text-center">
+								<p className="font-medium text-lg w-1/3 sm:block hidden text-center">
 									{/* @ts-ignore */}
 									{data.time.split(",")[0]}
 								</p>
-
-								<div className="font-medium sm:text-lg sm:w-1/4 w-1/2 text-center">
-									{/* @ts-ignore */}
-									<Status />
-								</div>
 							</div>
 						);
 					})
