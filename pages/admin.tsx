@@ -30,6 +30,8 @@ const Admin = () => {
 		fetchGuests();
 	}, []);
 
+	console.log(data);
+
 	return (
 		<div className="w-full h-screen bg-gray-300 font-sans-body">
 			<div className="sm:w-[60%] w-[90%] bg-[white] mx-auto translate-y-10 border shadow-lg rounded-lg px-8 py-6">
@@ -62,36 +64,38 @@ const Admin = () => {
 				{loading ? (
 					<p className=" text-center">Loading Data ...</p>
 				) : (
-					data.map((data, idx) => {
-						return (
-							<div
-								key={idx}
-								className="flex w-full items-start mb-3 justify-between">
-								<p className="font-medium sm:text-lg w-[5%] mr-3 sm:mr-0">
-									{idx + 1}
-								</p>
-								<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-left">
-									{/* @ts-ignore */}
-
-									{data.Name}
-									<span className="font-medium text-xs sm:w-1/3 w-1/2 block sm:hidden">
+					<div className="overflow-y-auto h-[55vh]">
+						{data.map((data, idx) => {
+							return (
+								<div
+									key={idx}
+									className="flex w-full items-start mb-3 justify-between">
+									<p className="font-medium sm:text-lg w-[5%] mr-3 sm:mr-0">
+										{idx + 1}
+									</p>
+									<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-left">
 										{/* @ts-ignore */}
-										{data.time.split(",")[0]}
-									</span>
-								</p>
 
-								<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-center">
-									{/* @ts-ignore */}
-									{data.phone}
-								</p>
+										{data.Name}
+										<span className="font-medium text-xs sm:w-1/3 w-1/2 block sm:hidden">
+											{/* @ts-ignore */}
+											{data.time.split(" ")[0].slice(0, -1)}
+										</span>
+									</p>
 
-								<p className="font-medium text-lg w-1/3 sm:block hidden text-center">
-									{/* @ts-ignore */}
-									{data.time.split(",")[0]}
-								</p>
-							</div>
-						);
-					})
+									<p className="font-medium sm:text-lg sm:w-1/3 w-1/2 text-center">
+										{/* @ts-ignore */}
+										{data.phone}
+									</p>
+
+									<p className="font-medium text-lg w-1/3 sm:block hidden text-center">
+										{/* @ts-ignore */}
+										{data.time.split(" ")[0].slice(0, -1)}
+									</p>
+								</div>
+							);
+						})}
+					</div>
 				)}
 			</div>
 		</div>
