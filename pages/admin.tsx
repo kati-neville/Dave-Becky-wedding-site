@@ -30,7 +30,16 @@ const Admin = () => {
 		fetchGuests();
 	}, []);
 
-	console.log(data);
+	const sortData = data.sort((a, b) => {
+		if (a.Name < b.Name) {
+			return -1;
+		}
+		if (a.Name > b.Name) {
+			return 1;
+		}
+
+		return 0;
+	});
 
 	return (
 		<div className="w-full h-screen bg-gray-300 font-sans-body">
@@ -65,7 +74,7 @@ const Admin = () => {
 					<p className=" text-center">Loading Data ...</p>
 				) : (
 					<div className="overflow-y-auto h-[55vh]">
-						{data.map((data, idx) => {
+						{sortData.map((data, idx) => {
 							return (
 								<div
 									key={idx}
