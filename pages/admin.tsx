@@ -30,7 +30,7 @@ const Admin = () => {
 		fetchGuests();
 	}, []);
 
-	const sortData = data.sort((a, b) => {
+	const sortData = data.sort((a: { Name: string }, b: { Name: string }) => {
 		if (a.Name < b.Name) {
 			return -1;
 		}
